@@ -4,22 +4,28 @@ import { getClasses } from '../utils/getClasses'
 import { useDispatch } from 'react-redux'
 import { deleteTodo } from '../slices/todoSlice'
 import toast from 'react-hot-toast'
+import TodoModal from './TodoModal'
+import { useState } from 'react'
+import CheckButton from './CheckButton'
 
 
 function Todoitem({todo}) {
     const dispatch = useDispatch()
+    const [updateModalOpen, setUpdateModalOpen] = useState(false)
+
     const handleDelete = () => {
         dispatch(deleteTodo(todo.id))
         toast.success('Task berhasil dihapus')
     } 
 
     const handleUpdate = () => {
-        console.log('updating')
+        setUpdateModalOpen(true)
     }
   return (
+      <>
     <div className={styles.item}>
         <div className={styles.todoDetails}>
-            []
+            <CheckButton/>
             <div className={styles.texts}>
                 <p className={getClasses([styles.todoText, todo.status === 'complete' && styles['todoText--completed']])}>
                     {todo.title}
@@ -45,6 +51,8 @@ function Todoitem({todo}) {
             </div>
         </div>
     </div>
+    <TodoModal todo={todo} type="update" modalOpen={updateModalOpen} setModalOpen={setUpdateModalOpen} />
+    </>
   )
 }
 
