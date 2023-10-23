@@ -1,10 +1,8 @@
-import style from '../styles/modules/title.module.scss'
-
 import PropTypes from 'prop-types';
 
 function PageTitle({children, ...rest}) {
   return (
-    <p className={style.title} {...rest}>{children}</p>
+    <h1 className="display-3 py-4 px-4 mx-4" {...rest}>{children}</h1>
   )
 }
 

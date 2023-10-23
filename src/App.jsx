@@ -10,7 +10,9 @@ function App() {
   return (
     <>
       <div className="container-fluid">
-        <PageTitle>TODO Lists</PageTitle>
+        <div className="row border-5">
+          <div className="col-lg-12">
+            <PageTitle>To Do Lists</PageTitle>
         <div className="row">
           <div className="col">
           <AppHeader/>
@@ -23,6 +25,8 @@ function App() {
           fontSize: '1.4rem'
         }
        }} />
+          </div>
+        </div> 
     </>
   )
 }
