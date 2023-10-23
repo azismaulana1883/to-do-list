@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import CheckButton from './CheckButton'
 
 
-function Todoitem({todo}) {
+function TodoItem({todo}) {
     const dispatch = useDispatch()
     const [checked, setChecked] = useState(false)
     const [updateModalOpen, setUpdateModalOpen] = useState(false)
@@ -73,4 +73,4 @@ function Todoitem({todo}) {
   )
 }
 
-export default Todoitem
+export default TodoItem

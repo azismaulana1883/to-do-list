@@ -1,7 +1,5 @@
 import { useSelector } from "react-redux"
-import Todoitem from "./Todoitem"
-
-
+import TodoItem from "./Todoitem"
 
 function AppContent() {
     const todoList = useSelector((state) => state.todo.todoList)
@@ -17,7 +15,7 @@ function AppContent() {
     })
   return (
     <div>
-        {filterTodoList && filterTodoList.length > 0 ? filterTodoList.map((todo) => <Todoitem key={todo.id} todo = {todo}/>)
+        {filterTodoList && filterTodoList.length > 0 ? filterTodoList.map((todo) => <TodoItem key={todo.id} todo = {todo}/>)
         : `'Tidak ada task'`}
     </div>
   )
