@@ -49,7 +49,7 @@ export const todoSlice = createSlice({
             if(todoList)
             {
                 const todoListArr = JSON.parse(todoList)
-                todoListArr.forEach((todo,index) => {
+                todoListArr.forEach((todo) => {
                     if(todo.id === action.payload.id){
                         todo.title = action.payload.title
                         todo.status = action.payload.status
